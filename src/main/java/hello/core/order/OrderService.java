@@ -1,2 +1,6 @@
-package hello.core.order;public class OrderService {
+package hello.core.order;
+
+public interface OrderService {
+    Order createOrder(Long memberId, String itemName, int itemPirce);
+    
 }
