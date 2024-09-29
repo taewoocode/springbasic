@@ -7,7 +7,8 @@ import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+
+import javax.inject.Provider;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -52,11 +53,23 @@ public class SingletonWithPrototypeTest1 {
 
         private int logic() {
             PrototypeBean prototypeBean = prototypeBeanProvider.getObject();
+            System.out.println( "prototypeBean = " + prototypeBean );
             prototypeBean.addCount();
             int count = prototypeBean.getCount();
             return count;
         }
+
+//        @Autowired
+//        private ObjectProvider<PrototypeBean> prototypeBeanProvider;
+//
+//        private int logic() {
+//            PrototypeBean prototypeBean = prototypeBeanProvider.getObject();
+//            prototypeBean.addCount();
+//            int count = prototypeBean.getCount();
+//            return count;
+//        }
     }
+
 //            public ClientBean(ObjectProvider<PrototypeBean> prototypeBeanProvider) {
 //            this.prototypeBeanProvider = prototypeBeanProvider;
 //        }
