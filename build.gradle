@@ -23,7 +23,6 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     compileOnly 'org.projectlombok:lombok:1.18.28'
     annotationProcessor 'org.projectlombok:lombok:1.18.28'
-    implementation 'org.springframework:spring-context:5.3.23' //
 
     // 테스트에서 Lombok 사용 시
     testCompileOnly 'org.projectlombok:lombok:1.18.28'
@@ -31,7 +30,10 @@ dependencies {
 
     //추가
     implementation('javax.inject:javax.inject:1')
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.3.1'
+    implementation 'org.springframework:spring-context:6.1.10' // 명시적 버전 지정
+
+
 
 }
 
